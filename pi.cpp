@@ -16,6 +16,14 @@ int find_arg_idx(int argc, char** argv, const char* option) {
     return -1;
 }
 
+//Function to convert command line input (string) to integer
+int stringToInt(const std::string& str) {
+    std::istringstream iss(str);
+    int result;
+    iss >> result;
+    return result;
+}
+
 int main(int argc, char* argv[]) {
 
     // Initialize MPI
@@ -44,8 +52,9 @@ int main(int argc, char* argv[]) {
 
     if (find_arg_idx(argc, argv, "-n") >= 0) {
 
+        long int n = stringToInt(argv[2]);
         double start_time = MPI_Wtime();
-        double result = pi_calc(argc, argv);
+        double result = pi_calc(n);
         double end_time = MPI_Wtime();
         
         if (rank == 0) {

@@ -36,7 +36,7 @@ estimated_pi2=$(echo "$output5" | grep "Estimated Pi" | awk "{print \$3}")
 min_pi=3.13
 max_pi=3.15
 
-    if (( $(echo "$estimated_pi1 < $min_pi" | bc -l) )) || (( $(echo "$estimated_pi1 > $max_pi" | bc -l) ) || ( $(echo "$estimated_pi2 < $min_pi" | bc -l) )) || (( $(echo "$estimated_pi2 > $max_pi" | bc -l) )); then
+    if (( $(echo "$estimated_pi1 < $min_pi" | bc -l) )) || (( $(echo "$estimated_pi1 > $max_pi" | bc -l) )) || (( $(echo "$estimated_pi2 < $min_pi" | bc -l) )) || (( $(echo "$estimated_pi2 > $max_pi" | bc -l) )); then
         echo "Wrong answer: Estimated Pi out of range [$min_pi, $max_pi]"
     else
         echo "Correct answer: Estimated Pi within range [$min_pi, $max_pi]"

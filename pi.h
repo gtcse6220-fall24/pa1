@@ -7,7 +7,7 @@
 #include <mpi.h>
 
 
-double pi_calc(int argc, char* argv[]) {
+double pi_calc(long int n) {
     
     // Write your code below
     ////////////////////////////////////////
